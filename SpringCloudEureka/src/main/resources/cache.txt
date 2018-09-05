@@ -1,0 +1,37 @@
+spring:
+  application:
+    # 应用名称
+    name: Cloud-Eureka
+  datasource:
+      data-password: fjisap
+      data-username: fjisap
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@119.23.146.17:1521:testdb
+  session:
+    store-type: none
+  jmx:
+    default-domain: register
+endpoints:
+  jmx:
+    domain: register
+server:
+  # 端口
+  port: 9010
+eureka:
+  instance:
+    # 终端名称
+    hostname: eurekahost1
+  client:
+    # 服务端不注册自己
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://eurekahost2:9020/eureka/,http://eurekahost3:9030/eureka/
+  server:
+    # 等待时间
+    enableSelfPreservation: false
+    wait-time-in-ms-when-sync-empty: 0
+    enable-self-preservation: false
+security:
+  basic:
+    enabled: false

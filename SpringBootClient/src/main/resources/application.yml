@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: Boot-Client-One
+  datasource:
+    data-password: fjisap
+    data-username: fjisap
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@119.23.146.17:1521:testdb
+  #zipkin:
+    #zipkin server 地址
+    #base-url: http://localhost:9050
+server:
+  port: 9003
+  session:
+    timeout: 600
+  tomcat:
+    uri-encoding: UTF-8
+  context-path: /cloud
+eureka:
+  instance:
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    non-secure-port-enabled: true
+    secure-port: ${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9020/eureka/
+feign:
+    hystrix:
+      enabled: true
+hystrix:
+  dashboard:
+    enable-ignore-connection-close-header: true
+  stream:
+    maxConcurrentConnections: 20
+zuul:
+  routes:
+    client-one:
+      path: /clientroute/**
+      url: http://localhost:9001/
+      #serviceId: BOOT-SERVER
+

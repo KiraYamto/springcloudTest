@@ -1,0 +1,17 @@
+spring:
+  application:
+    # 应用名称
+    name: Cloud-Eureka
+server:
+  # 端口
+  port: 9020
+eureka:
+  instance:
+    # 终端名称
+    hostname: eurekahost2
+  client:
+    # 服务端不注册自己
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://eurekahost1:9010/eureka/,http://eurekahost3:9030/eureka/

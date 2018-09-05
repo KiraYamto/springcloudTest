@@ -1,0 +1,16 @@
+server:
+  port: 9050
+spring:
+  application:
+    name: Zipkin-Server
+eureka:
+  instance:
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    non-secure-port-enabled: true
+    secure-port: ${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://eurekahost2:9020/eureka/

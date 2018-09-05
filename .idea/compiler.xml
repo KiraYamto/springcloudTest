@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="JvmTest" />
+        <module name="SpringBootClient" />
+        <module name="SpringBootServer" />
+        <module name="SpringCloudConfigClient" />
+        <module name="SpringCloudConfigServer" />
+        <module name="SpringCloudEureka" />
+        <module name="SpringCloudSleuth" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JvmTest" target="1.8" />
+      <module name="SpringBootClient" target="1.8" />
+      <module name="SpringBootServer" target="1.8" />
+      <module name="SpringBootServerTwo" target="1.5" />
+      <module name="SpringCloudConfigClient" target="1.8" />
+      <module name="SpringCloudConfigServer" target="1.8" />
+      <module name="SpringCloudEureka" target="1.8" />
+      <module name="SpringCloudSleuth" target="1.8" />
+      <module name="springcloudTest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: config-server
+  datasource:
+      data-password: fjisap
+      data-username: fjisap
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@119.23.146.17:1521:testdb
+  cloud:
+    config:
+      server:
+        default-label: master
+        git:
+          uri: https://github.com/forezp/SpringcloudConfig/
+          username: kiratianyi@hotmail.com
+          password: boket123
+          search-paths: respo
+server:
+  port: 9004
+eureka:
+  instance:
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    non-secure-port-enabled: true
+    secure-port: ${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka/

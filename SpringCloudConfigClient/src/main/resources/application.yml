@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: config-client
+  datasource:
+      data-password: fjisap
+      data-username: fjisap
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@119.23.146.17:1521:testdb
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+server:
+  port: 9005
+eureka:
+  instance:
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    non-secure-port-enabled: true
+    secure-port: ${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka/
