@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Algorithm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/JvmTest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBootClient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBootServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringCloudConfigClient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringCloudConfigServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringCloudEureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringCloudSleuth" charset="UTF-8" />
   </component>
 </project>
