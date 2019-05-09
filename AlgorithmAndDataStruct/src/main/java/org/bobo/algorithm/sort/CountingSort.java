@@ -1,4 +1,4 @@
-package org.bobo.sort;
+package org.bobo.algorithm.sort;
 
 /**
  * @author tian.xubo
@@ -42,7 +42,7 @@ public class CountingSort extends BaseSort {
 
     public static void main(String[] args) {
         int length = 20;
-        int[] tmparr = CountingSort.generalArray(length);
+        int[] tmparr = generalArray(length);
         CountingSort countingSort = new CountingSort(tmparr);
         countingSort.sort();
         System.out.println("sorted array :");

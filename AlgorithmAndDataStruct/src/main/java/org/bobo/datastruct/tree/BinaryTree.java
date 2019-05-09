@@ -1,4 +1,4 @@
-package com.struct.tree;
+package org.bobo.datastruct.tree;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Map;
  * @author tian.xubo
  * @created 2019 - 04 - 24 13:38
  */
-public class BinaryTree_Overflow implements Tree {
+public class BinaryTree implements Tree {
 
     private Node root;
     static Map<Integer,Node> map = new HashMap<>();
@@ -126,7 +126,7 @@ public class BinaryTree_Overflow implements Tree {
                 return false;
             }
         }
-        //如果当前节点没有子节点
+        //如果当前节点没有子节点 --不用置空
         if(current.leftChild == null && current.rightChild == null){
             if(current == root){
                 root = null;
@@ -146,6 +146,7 @@ public class BinaryTree_Overflow implements Tree {
             }else{
                 parent.rightChild = current.rightChild;
             }
+            current.rightChild = null;
             return true;
             //当前节点有一个子节点，左子节点
         }else if(current.leftChild != null && current.rightChild == null){
@@ -156,6 +157,7 @@ public class BinaryTree_Overflow implements Tree {
             }else{
                 parent.rightChild = current.leftChild;
             }
+            current.leftChild = null;
             return true;
         }else{
             //当前节点存在两个子节点
@@ -167,6 +169,8 @@ public class BinaryTree_Overflow implements Tree {
             }else{
                 parent.rightChild = successor;
             }
+            current.leftChild = null;
+            current.rightChild = null;
             map.put(current.data,current);
 
         }
@@ -186,11 +190,10 @@ public class BinaryTree_Overflow implements Tree {
             successorParent.leftChild = successor.rightChild;
             successor.rightChild = delNode.rightChild;
         }
-
         return successor;
     }
     public static void main(String[] args) {
-        BinaryTree_Overflow bt = new BinaryTree_Overflow();
+        BinaryTree bt = new BinaryTree();
         bt.insert(50);
         bt.insert(20);
         bt.insert(80);

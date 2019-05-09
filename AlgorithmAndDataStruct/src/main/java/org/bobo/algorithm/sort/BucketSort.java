@@ -1,10 +1,6 @@
-package org.bobo.sort;
-
-import rx.internal.util.LinkedArrayList;
+package org.bobo.algorithm.sort;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -13,19 +9,23 @@ import java.util.List;
  */
 public class BucketSort extends BaseSort {
     //思想：确定多少个桶，确定每个桶的边界，把所有数值分别丢到各个桶里
+    private int bucketNum = 10;
     public BucketSort(int[] array) {
         super(array);
     }
 
+    public BucketSort(int[] array, int bucketNum) {
+        super(array);
+        this.bucketNum = bucketNum;
+    }
+
     @Override
     protected void sort() {
-        int length = array.length;
         int max = findMax();
-        int bucketNum = 5;
         int bucketRange = max/bucketNum;//500 /20 =25
         List<Integer> [] bukets = new ArrayList[bucketNum];
         for(int i = 0;i < array.length; i++){
-            int index = array[i]/bucketRange >=bucketNum?bucketNum - 1:array[i]/bucketRange;
+            int index = array[i]/bucketRange >= bucketNum?bucketNum - 1 : array[i]/bucketRange;
             if(bukets[index] == null){
                 bukets[index] = new ArrayList<Integer>();
             }
@@ -33,9 +33,12 @@ public class BucketSort extends BaseSort {
         }
         ArrayList<Integer> tmp = new ArrayList<>();
         for(int i = 0 ;i<bukets.length;i++){
-            bukets[i].sort(null);
-            System.out.println(bukets[i]);
-            tmp.addAll(bukets[i]);
+            if(bukets[i] != null){
+                bukets[i].sort(null);
+                System.out.println(bukets[i]);
+                tmp.addAll(bukets[i]);
+            }
+
         }
         Object[] tmparr = tmp.toArray(new Integer[tmp.size()]);
         for(int i = 0 ;i < array.length;i++){
@@ -43,7 +46,7 @@ public class BucketSort extends BaseSort {
         }
     }
 
-    private int findMax(){
+    protected int findMax(){
         int max = 0;
         for (int i = 0 ;i < array.length;i++){
             max = array[i] >max?array[i]:max;
@@ -53,7 +56,7 @@ public class BucketSort extends BaseSort {
 
     public static void main(String[] args) {
         int length = 20;
-        int[] tmparr = BucketSort.generalArrayWithMax(length,100);
+        int[] tmparr = generalArrayWithMax(length,100);
         BucketSort bucketSort = new BucketSort(tmparr);
         bucketSort.sort();
         System.out.println("sorted array :");

@@ -1,4 +1,4 @@
-package com.struct.tree;
+package org.bobo.datastruct.tree;
 
 import java.util.List;
 

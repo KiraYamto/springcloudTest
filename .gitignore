@@ -4,3 +4,5 @@ SpringCloudConfigClient.iml
 SpringCloudConfigServer.iml
 SpringCloudEureka.iml
 SpringCloudSleuth.iml
+*.iml
+

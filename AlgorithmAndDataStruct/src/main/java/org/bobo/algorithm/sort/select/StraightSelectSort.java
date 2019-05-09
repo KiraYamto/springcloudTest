@@ -1,7 +1,6 @@
-package org.bobo.sort.select;
+package org.bobo.algorithm.sort.select;
 
-import org.bobo.sort.BaseSort;
-import org.bobo.sort.swap.QuickSort;
+import org.bobo.algorithm.sort.BaseSort;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package org.bobo.sort;
+package org.bobo.algorithm.sort;
 
 import java.util.Random;
 

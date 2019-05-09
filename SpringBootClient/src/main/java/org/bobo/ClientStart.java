@@ -18,8 +18,6 @@ import java.util.Map;
 @EnableEurekaClient
 public class ClientStart {
     public static void main(String[] args) throws Exception{
-
         SpringApplication.run(ClientStart.class);
-
     }
 }

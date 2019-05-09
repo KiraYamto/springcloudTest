@@ -1,4 +1,4 @@
-package org.bobo.sort;
+package org.bobo.algorithm.sort;
 
 import java.util.Arrays;
 
@@ -48,7 +48,7 @@ public class MergeSort extends BaseSort {
 
     public static void main(String[] args) {
         int length = 15;
-        int[] tmparr = MergeSort.generalArray(length);
+        int[] tmparr = generalArray(length);
         MergeSort mergeSort = new MergeSort(tmparr);
         mergeSort.sort();
         System.out.println("sorted array :");

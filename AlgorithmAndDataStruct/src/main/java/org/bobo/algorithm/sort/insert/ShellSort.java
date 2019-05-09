@@ -1,6 +1,6 @@
-package org.bobo.sort.insert;
+package org.bobo.algorithm.sort.insert;
 
-import org.bobo.sort.BaseSort;
+import org.bobo.algorithm.sort.BaseSort;
 
 /**
  * @author tian.xubo
